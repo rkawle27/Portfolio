@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: linear-gradient(to bottom, #020024, #14142f, #0b1b46);
+      color: white;
+      overflow-x: hidden;
+      position: relative;
+      min-height: 100vh;
+    }
+    .stars {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 2s infinite ease-in-out alternate;
+    }
+    @keyframes twinkle {
+      from { opacity: 0.2; transform: scale(1); }
+      to { opacity: 1; transform: scale(1.5); }
+    }
+    header {
+      padding: 2rem;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    header h1 {
+      font-size: 3rem;
+      background: linear-gradient(90deg, #ff6ec4, #7873f5, #4ADEDE, #00ff87);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientText 8s linear infinite;
+      background-size: 400% 400%;
+    }
+    @keyframes gradientText {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .container {
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 3rem;
+    }
+    .about, .skills, .contact-form {
+      width: 90%;
+      max-width: 800px;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .about:hover, .skills:hover, .contact-form:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+    }
+    h2 {
+      margin-bottom: 1rem;
+      background: linear-gradient(45deg, #ff6ec4, #7873f5, #4ADEDE);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 2rem;
+    }
+    .projects {
+      padding: 3rem 2rem;
+      text-align: center;
+    }
+    .project-card {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.1);
+      margin: 1rem;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      width: 300px;
+      box-shadow: 0 0 25px rgba(255, 255, 255, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 40px rgba(255, 255, 255, 0.3);
+    }
+    .project-card h3 {
+      background: linear-gradient(45deg, #f7971e, #ffd200, #4ADEDE);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .contact-form input, .contact-form textarea {
+      padding: 0.8rem 1rem;
+      border: none;
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      resize: none;
+    }
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: #ccc;
+    }
+    .contact-form button {
+      padding: 0.8rem 1rem;
+      background: linear-gradient(90deg, #00c3ff, #ffff1c, #ff6ec4);
+      border: none;
+      border-radius: 8px;
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .contact-form button:hover {
+      filter: brightness(1.1);
+    }
+    footer {
+      padding: 2rem;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.05);
+      margin-top: 2rem;
+    }
+    footer p {
+      background: linear-gradient(45deg, #00c3ff, #ffff1c, #ff6ec4);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+  </style>
+</head>
+<body>
+  <div class="stars"></div>
+  <header>
+    <h1>Hi, I'm Rithika Kawle</h1>
+  </header>
+
+  <section class="container">
+    <div class="about">
+      <h2>About Me</h2>
+      <p>Pursuing a Masters in Computer Science, I aim to build a strong foundation in technology, with an emphasis on learning, innovation, and professional growth.</p>
+    </div>
+    <div class="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li>HTML, CSS, JavaScript</li>
+        <li>AWS</li>
+        <li>SQL</li>
+        <li>Python, Java</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="projects">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <h3>Signalize</h3>
+      <p>A traffic signal optimization tool using machine learning to reduce congestion and improve flow efficiency.</p>
+    </div>
+    <div class="project-card">
+      <h3>Enigma</h3>
+      <p>An encryption-decryption app inspired by historical cipher machines, built using Java and React.</p>
+    </div>
+  </section>
+
+  <section class="container">
+    <div class="contact-form">
+      <h2>Contact Me</h2>
+      <form action="https://formspree.io/f/mnqwrwqy" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="_replyto" placeholder="Your Email" required />
+        <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>Contact me at: rkawle@aum.edu</p>
+  </footer>
+
+  <script>
+    const numStars = 150;
+    const starsContainer = document.querySelector(".stars");
+    for (let i = 0; i < numStars; i++) {
+      const star = document.createElement("div");
+      star.classList.add("star");
+      star.style.top = Math.random() * 100 + "%";
+      star.style.left = Math.random() * 100 + "%";
+      star.style.animationDuration = (Math.random() * 2 + 1) + "s";
+      starsContainer.appendChild(star);
+    }
+  </script>
+</body>
+</html>
